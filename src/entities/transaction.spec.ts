@@ -9,7 +9,6 @@ describe("Transaction Unit test", () => {
         }))
     })
 
-
     test("should retrun a positive value when transaction type is deposit", () => {
         
         const transaction = new Transaction({
