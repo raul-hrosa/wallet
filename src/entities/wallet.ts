@@ -32,22 +32,8 @@ export default class Wallet {
         this.props.ammount = value;
     }
 
-    public deposit(value: number) {
-        this.transactions.push(new Transaction({
-                type: TransactionType.DEPOSIT,
-                value: value,
-                date: new Date()
-            }))
-        
-    }
-
-    public withdraw(value: number) {
-        this.transactions.push(new Transaction({
-                type: TransactionType.WITHDRAW,
-                value: value,
-                date: new Date()
-            }))
-        
+    public addTransaction(transaction: Transaction) {
+        this.transactions.push(transaction)
     }
     
 }

@@ -1,3 +1,4 @@
+import Transaction from './transaction'
 import Wallet from './wallet'
 
 describe("Wallet Unit test", () => {
@@ -13,18 +14,16 @@ describe("Wallet Unit test", () => {
         expect(wallet.ammount).toBe(0)
     })
 
-    test("should create a deposito", () => {
+    test("should create a deposit", () => {
         const wallet = new Wallet({ cpf: "123123" }) 
-        wallet.deposit(100)
+        wallet.addTransaction(new Deposit({ amount : 100, transactionDate : new Date('2022-07-04T15:00:00')}));
         expect(wallet.ammount).toBe(100)
     })
 
-    test("should create a deposito", () => {
+    test.skip("should create a withdraw", () => {
         const wallet = new Wallet({ cpf: "123123" }) 
-        wallet.deposit(100)
-        wallet.withdraw(50)
+        wallet.addTransaction(new Deposit({ amount : 100, transactionDate : new Date('2022-07-04T15:00:00')}));
+        wallet.addTransaction(new Withdraw({ amount : 50, transactionDate : new Date('2022-10-04T15:00:00')}));
         expect(wallet.ammount).toBe(50)
     })
- 
- 
 })

@@ -1,4 +1,3 @@
-
 export enum TransactionType {
     WITHDRAW = "withdraw",
     DEPOSIT = "deposit"
@@ -10,7 +9,7 @@ export type TransactionProps = {
     date: Date
 }
 
-export default class Transaction {
+export default abstract class Transaction {
 
     constructor(private readonly props: TransactionProps) {
         this.type = props.type
@@ -27,7 +26,7 @@ export default class Transaction {
     }
 
     get value() : number {
-        return this.type == TransactionType.WITHDRAW ?  - this.props.value : this.props.value 
+        return this.props.value 
     }
 
     private set value(value: number) {
@@ -41,8 +40,5 @@ export default class Transaction {
     private set date(value: Date) {
         this.props.date = value;
     }
-
-       
-
 }
 

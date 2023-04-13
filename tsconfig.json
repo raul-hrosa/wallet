@@ -3,6 +3,7 @@
     "incremental": true,
     "target": "es2017",
     "experimentalDecorators": true,
+    "outDir": "dist",
     "module": "commonjs",
     "baseUrl": "./src",
     "esModuleInterop": true,  
